@@ -1,0 +1,271 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\Blizzard_SharedXML\UI.xsd">
+
+	<Button name="HSC_CartRowTemplate" mixin="HSC_CartRowMixin" virtual="true">
+		<Size y="44"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Stripe" setAllPoints="true" hidden="true">
+					<Color r="1" g="0.9" b="0.7" a="0.035"/>
+				</Texture>
+			</Layer>
+			<Layer level="BORDER">
+				<Texture parentKey="Accent">
+					<Size x="3"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="1" y="-6"/>
+						<Anchor point="BOTTOMLEFT" x="1" y="6"/>
+					</Anchors>
+					<Color r="1" g="0.8" b="0.36" a="1"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="34" y="34"/>
+					<Anchors>
+						<Anchor point="LEFT" x="12" y="0"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Count" inherits="GameFontHighlight" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-10" y="-7"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Cost" inherits="GameFontHighlightSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-10" y="8"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Size y="14"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon" relativePoint="TOPRIGHT" x="10" y="-1"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Count" relativePoint="LEFT" x="-8" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Size y="12"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="10" y="2"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Cost" relativePoint="LEFT" x="-8" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="IconBorder" atlas="housing-item-wood-frame_64">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY" textureSubLevel="1">
+				<Texture parentKey="Check" atlas="common-icon-checkmark" hidden="true">
+					<Size x="18" y="18"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="-3" y="4"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="TrackIcon" atlas="Waypoint-MapPin-Minimap-Tracked" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="TOPLEFT" x="2" y="-2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture parentKey="Highlight" atlas="common-dropdown-customize-mouseover" alpha="0.18" alphaMode="ADD" setAllPoints="true"/>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
+	<Button name="HSC_CartHeaderTemplate" mixin="HSC_CartHeaderMixin" virtual="true">
+		<Size y="26"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Left" atlas="Options_ListExpand_Left" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Right" atlas="Options_ListExpand_Right_Expanded" useAtlasSize="true">
+					<Anchors>
+						<Anchor point="TOPRIGHT"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="Middle" atlas="_Options_ListExpand_Middle" useAtlasSize="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Left" relativePoint="TOPRIGHT"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Right" relativePoint="BOTTOMLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="LEFT" x="9" y="0"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Count" inherits="GameFontHighlightSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="RIGHT" relativeKey="$parent.Right" relativePoint="LEFT" x="0" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Size y="14"/>
+					<Anchors>
+						<Anchor point="LEFT" relativeKey="$parent.Icon" relativePoint="RIGHT" x="6" y="0"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Count" relativePoint="LEFT" x="-6" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture parentKey="HighlightLeft" atlas="Options_ListExpand_Left" useAtlasSize="true" alphaMode="ADD" alpha="0.4">
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="HighlightRight" atlas="Options_ListExpand_Right_Expanded" useAtlasSize="true" alphaMode="ADD" alpha="0.4">
+					<Anchors>
+						<Anchor point="TOPRIGHT"/>
+					</Anchors>
+				</Texture>
+				<Texture parentKey="HighlightMiddle" atlas="_Options_ListExpand_Middle" useAtlasSize="false" alphaMode="ADD" alpha="0.4">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.HighlightLeft" relativePoint="TOPRIGHT"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.HighlightRight" relativePoint="BOTTOMLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
+	<Button name="HSC_BrowserRowTemplate" mixin="HSC_BrowserRowMixin" virtual="true">
+		<Size y="44"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Stripe" setAllPoints="true" hidden="true">
+					<Color r="1" g="0.9" b="0.7" a="0.035"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon">
+					<Size x="34" y="34"/>
+					<Anchors>
+						<Anchor point="LEFT" x="8" y="0"/>
+					</Anchors>
+				</Texture>
+				<FontString parentKey="Count" inherits="GameFontHighlightSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="TOPRIGHT" x="-44" y="-8"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Cost" inherits="GameFontHighlightSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-44" y="8"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Size y="14"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon" relativePoint="TOPRIGHT" x="10" y="-1"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Count" relativePoint="LEFT" x="-8" y="0"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Sub" inherits="GameFontHighlightSmall" justifyH="LEFT" wordwrap="false">
+					<Size y="12"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="10" y="2"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Cost" relativePoint="LEFT" x="-8" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="IconBorder" atlas="housing-item-wood-frame_64">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.Icon"/>
+						<Anchor point="BOTTOMRIGHT" relativeKey="$parent.Icon"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY" textureSubLevel="1">
+				<Texture parentKey="CartBadge" atlas="Perks-ShoppingCart" hidden="true">
+					<Size x="16" y="16"/>
+					<Anchors>
+						<Anchor point="CENTER" relativeKey="$parent.Icon" relativePoint="BOTTOMRIGHT" x="-3" y="4"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture parentKey="Highlight" atlas="common-dropdown-customize-mouseover" alpha="0.18" alphaMode="ADD" setAllPoints="true"/>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+			<OnEnter method="OnEnter"/>
+			<OnLeave method="OnLeave"/>
+			<OnClick method="OnClick"/>
+		</Scripts>
+	</Button>
+
+	<Frame name="HSC_BrowserHeaderTemplate" mixin="HSC_BrowserHeaderMixin" virtual="true">
+		<Size y="28"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Count" inherits="GameFontHighlightSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="-8" y="7"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="Label" inherits="GameFontNormal" justifyH="LEFT" wordwrap="false">
+					<Size y="14"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="8" y="6"/>
+						<Anchor point="RIGHT" relativeKey="$parent.Count" relativePoint="LEFT" x="-8" y="0"/>
+					</Anchors>
+				</FontString>
+				<Texture parentKey="Line">
+					<Size y="1"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" x="6" y="1"/>
+						<Anchor point="BOTTOMRIGHT" x="-6" y="1"/>
+					</Anchors>
+					<Color r="1" g="0.82" b="0" a="0.3"/>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<Frame name="HSC_VendorPinTemplate" mixin="HSC_VendorPinMixin" enableMouse="true" virtual="true">
+		<Size x="24" y="24"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture parentKey="Icon" atlas="Perks-ShoppingCart" setAllPoints="true"/>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture parentKey="Hover" atlas="Perks-ShoppingCart" alphaMode="ADD" alpha="0.45" setAllPoints="true" hidden="true"/>
+				<FontString parentKey="Count" inherits="NumberFontNormalSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" x="4" y="-3"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad method="OnLoad"/>
+		</Scripts>
+	</Frame>
+</Ui>

@@ -1,0 +1,39 @@
+## Interface: 120105
+## Title: |cffe8b04dHousing|r Shopping Cart
+## Notes: Adds an "Add to Shopping Cart" button to the Blueprint List - or add any blueprint by its share code, from anywhere - and keeps a cart of everything you're missing, with how to get each item.
+## Author: RandomAddonGuy
+## Version: 1.1.0
+## X-License: MIT-0
+## SavedVariables: HousingShoppingCartDB
+## IconAtlas: Perks-ShoppingCart
+## Category: Housing
+## AddonCompartmentFunc: HousingShoppingCart_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: HousingShoppingCart_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: HousingShoppingCart_OnAddonCompartmentLeave
+
+Locales.lua
+Core.lua
+Data.lua
+GameData.lua
+Vendors.lua
+Cart.lua
+Recent.lua
+Tooltip.lua
+Merchant.lua
+Learn.lua
+Scan.lua
+Map.lua
+Import.lua
+
+UI\Rows.lua
+UI\MapPins.lua
+UI\Templates.xml
+UI\Window.lua
+UI\Browser.lua
+UI\ImportPanel.lua
+UI\Toast.lua
+UI\Minimap.lua
+UI\MerchantPanel.lua
+
+Blueprint.lua
+BlueprintImport.lua
